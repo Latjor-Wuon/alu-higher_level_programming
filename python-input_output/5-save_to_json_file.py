@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-"""Module 6-load_from_json_file.
-Creates an Object from a “JSON file”.
+"""Module 5-save_to_json_file.
+Writes an Object to a text file,
+using a JSON representation.
 """
 
 
 import json
 
 
-def load_from_json_file(filename):
-    """Creates an object from filename.
+def save_to_json_file(my_obj, filename):
+    """Writes the representation of my_obj
+    to filename.
     Args:
-        - filename: name of the JSON file
-    Returns: the object
+        - my_obj: object to write
+        - filename: file to write into
     """
 
-    with open(filename, 'r') as f:
-        return json.load(f)
+    with open(filename, 'w+') as f:
+        json.dump(my_obj, f)
